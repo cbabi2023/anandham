@@ -20,6 +20,13 @@ export const metadata: Metadata = {
   description: "An authoritative digital archive for the rigorous study of Guru's philosophy, literature, and interventions in social reform.",
 };
 
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{

@@ -24,10 +24,10 @@ export default function ProfilePage() {
   ];
 
   return (
-    <main className="min-h-screen bg-background profile-page">
+    <main className="min-h-screen bg-background profile-page" style={{ width: '100%', maxWidth: '100vw', overflowX: 'hidden' }}>
       <Header />
       
-      <div className="container py-0 lg:py-20">
+      <div className="container py-0 lg:py-20" style={{ width: '100%', maxWidth: '100%', margin: 0, padding: 0 }}>
         {/* Profile Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
