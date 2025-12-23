@@ -3,25 +3,27 @@
 import { User, BookOpen, Menu, X } from "lucide-react";
 import { useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function Header() {
   const [language, setLanguage] = useState("EN");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   return (
     <nav className="navbar">
       <div className="navbar-container">
-        <div className="navbar-brand">
+        <Link href="/" className="navbar-brand">
           <BookOpen size={20} style={{ color: "var(--primary)" }} />
           <span className="navbar-logo">Anandham</span>
-        </div>
+        </Link>
 
         <div className="navbar-links">
-          <a href="#" className="nav-link active">Home</a>
-          <a href="#" className="nav-link">Life & History</a>
-          <a href="#" className="nav-link">Works</a>
-          <a href="#" className="nav-link">Philosophy</a>
-          <a href="#" className="nav-link">Research</a>
+          <Link href="/" className={`nav-link ${pathname === "/" ? "active" : ""}`}>Home</Link>
+          <Link href="/life-history" className={`nav-link ${pathname === "/life-history" ? "active" : ""}`}>Life & History</Link>
+          <Link href="/works" className={`nav-link ${pathname === "/works" ? "active" : ""}`}>Works</Link>
+          <Link href="/philosophy" className={`nav-link ${pathname === "/philosophy" ? "active" : ""}`}>Philosophy</Link>
+          <Link href="/research" className={`nav-link ${pathname === "/research" ? "active" : ""}`}>Research</Link>
         </div>
 
         <div className="navbar-actions">
@@ -59,11 +61,11 @@ export default function Header() {
       {mobileMenuOpen && (
         <div className="navbar-mobile-menu">
           <div className="navbar-mobile-content">
-            <a href="#" className="nav-link active" onClick={() => setMobileMenuOpen(false)}>Home</a>
-            <a href="#" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Life & History</a>
-            <a href="#" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Works</a>
-            <a href="#" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Philosophy</a>
-            <a href="#" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Research</a>
+            <Link href="/" className={`nav-link ${pathname === "/" ? "active" : ""}`} onClick={() => setMobileMenuOpen(false)}>Home</Link>
+            <Link href="/life-history" className={`nav-link ${pathname === "/life-history" ? "active" : ""}`} onClick={() => setMobileMenuOpen(false)}>Life & History</Link>
+            <Link href="/works" className={`nav-link ${pathname === "/works" ? "active" : ""}`} onClick={() => setMobileMenuOpen(false)}>Works</Link>
+            <Link href="/philosophy" className={`nav-link ${pathname === "/philosophy" ? "active" : ""}`} onClick={() => setMobileMenuOpen(false)}>Philosophy</Link>
+            <Link href="/research" className={`nav-link ${pathname === "/research" ? "active" : ""}`} onClick={() => setMobileMenuOpen(false)}>Research</Link>
             <div className="pill-toggle">
               <button
                 className={`pill-toggle-item ${language === "EN" ? "active" : ""}`}

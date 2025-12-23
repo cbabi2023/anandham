@@ -251,6 +251,14 @@ button, a {
   align-items: center;
   gap: 8px;
   flex-shrink: 0;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.navbar-brand:hover {
+  opacity: 0.8;
 }
 
 .navbar-logo {
@@ -1464,9 +1472,14 @@ section::before {
     padding: 0 16px;
   }
   
-  /* Hide desktop header on mobile */
-  .navbar {
+  /* Hide desktop header on mobile (except profile page) */
+  main:not(.profile-page) .navbar {
     display: none;
+  }
+  
+  /* Show header on profile page mobile */
+  .profile-page .navbar {
+    display: block;
   }
   
   /* Add padding bottom for mobile nav */
@@ -1481,9 +1494,24 @@ section::before {
     padding: 0;
   }
   
-  /* Hide footer on mobile */
-  footer {
+  /* Hide footer on mobile for home page */
+  main:not(.profile-page) > footer {
     display: none;
+  }
+  
+  /* Show footer on profile page */
+  .profile-page footer {
+    display: block !important;
+  }
+  
+  /* Ensure profile page is visible on mobile */
+  .profile-page {
+    display: block !important;
+  }
+  
+  /* Show header on profile page mobile */
+  .profile-page .navbar {
+    display: block !important;
   }
   
   /* Mobile hero improvements */
@@ -2301,22 +2329,119 @@ section::before {
 @media (max-width: 768px) {
   .profile-header {
     padding: 24px 0;
+    gap: 20px;
+  }
+
+  .profile-avatar {
+    width: 100px;
+    height: 100px;
+  }
+
+  .profile-avatar-edit {
+    width: 32px;
+    height: 32px;
   }
 
   .profile-name {
     font-size: 24px;
   }
 
+  .profile-email,
+  .profile-joined {
+    font-size: 14px;
+  }
+
+  .profile-actions {
+    flex-direction: column;
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .profile-actions .btn {
+    width: 100%;
+  }
+
   .profile-stats {
     grid-template-columns: 1fr;
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+
+  .profile-stat-card {
+    padding: 20px;
+  }
+
+  .profile-stat-icon {
+    width: 48px;
+    height: 48px;
+  }
+
+  .profile-stat-value {
+    font-size: 24px;
   }
 
   .profile-content-grid {
     grid-template-columns: 1fr;
+    gap: 24px;
+    margin-bottom: 32px;
+  }
+
+  .profile-card {
+    border-radius: var(--radius-md);
+  }
+
+  .profile-card-header {
+    padding: 20px 20px 0;
+    padding-bottom: 16px;
+    margin-bottom: 20px;
+  }
+
+  .profile-card-content {
+    padding: 0 20px 20px;
+  }
+
+  .profile-card-title {
+    font-size: 18px;
+  }
+
+  .profile-detail-item {
+    padding: 14px 0;
+  }
+
+  .profile-detail-label {
+    font-size: 12px;
+  }
+
+  .profile-detail-value {
+    font-size: 15px;
+  }
+
+  .profile-activity-item {
+    padding: 14px 0;
+  }
+
+  .profile-activity-title {
+    font-size: 15px;
+  }
+
+  .profile-activity-meta {
+    flex-wrap: wrap;
+    gap: 8px;
   }
 
   .profile-quick-actions {
     grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .profile-action-btn {
+    padding: 14px 20px;
+    font-size: 14px;
+  }
+
+  /* Container padding for mobile */
+  .container {
+    padding: 24px 16px;
   }
 }
 

@@ -20,7 +20,7 @@ export default function ProfilePage() {
   ];
 
   return (
-    <main className="min-h-screen bg-background">
+    <main className="min-h-screen bg-background profile-page">
       <Header />
       
       <div className="container py-12 lg:py-20">
