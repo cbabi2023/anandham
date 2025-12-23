@@ -1147,46 +1147,43 @@ section::before {
 }
 
 .hero-mobile-meta {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
   padding: 0;
   background: transparent;
   border: none;
   max-width: 100%;
+  flex-wrap: wrap;
 }
 
 .hero-mobile-meta-item {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   gap: 6px;
-  padding: 16px 12px;
-  background: var(--secondary);
-  border-radius: 10px;
-  border: 1px solid var(--border);
-  text-align: center;
-  transition: all 0.2s ease;
-}
-
-.hero-mobile-meta-item:hover {
-  border-color: var(--primary);
-  background: var(--muted);
+  padding: 0;
+  background: transparent;
+  border: none;
+  text-align: left;
 }
 
 .hero-mobile-meta-item svg {
-  color: var(--primary);
+  color: var(--muted-foreground);
   flex-shrink: 0;
-  margin-bottom: 2px;
+  width: 14px;
+  height: 14px;
 }
 
 .hero-mobile-meta-item span {
   font-size: 11px;
-  color: var(--foreground);
-  font-weight: 500;
+  color: var(--muted-foreground);
+  font-weight: 400;
   line-height: 1.4;
-  letter-spacing: -0.01em;
+  letter-spacing: 0;
 }
 
 
@@ -1646,16 +1643,18 @@ section::before {
   }
   
   .hero-mobile-meta {
-    gap: 10px;
+    gap: 16px;
+    flex-direction: column;
+    align-items: center;
   }
   
   .hero-mobile-meta-item {
-    padding: 14px 10px;
+    gap: 5px;
   }
   
   .hero-mobile-meta-item svg {
-    width: 16px;
-    height: 16px;
+    width: 13px;
+    height: 13px;
   }
   
   .hero-mobile-meta-item span {
