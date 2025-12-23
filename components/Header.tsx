@@ -1,13 +1,12 @@
 "use client";
 
-import { Search, BookOpen, Menu, X } from "lucide-react";
+import { User, BookOpen, Menu, X } from "lucide-react";
 import { useState } from "react";
-import SearchDialog from "@/components/SearchDialog";
+import Link from "next/link";
 
 export default function Header() {
   const [language, setLanguage] = useState("EN");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [searchOpen, setSearchOpen] = useState(false);
 
   return (
     <nav className="navbar">
@@ -40,13 +39,13 @@ export default function Header() {
               MAL
             </button>
           </div>
-          <button
-            className="navbar-search-btn"
-            aria-label="Search"
-            onClick={() => setSearchOpen(true)}
+          <Link
+            href="/profile"
+            className="navbar-profile-btn"
+            aria-label="Profile"
           >
-            <Search size={16} />
-          </button>
+            <User size={18} />
+          </Link>
           <button
             className="navbar-menu-btn"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -82,8 +81,6 @@ export default function Header() {
           </div>
         </div>
       )}
-
-      <SearchDialog isOpen={searchOpen} onClose={() => setSearchOpen(false)} />
     </nav>
   );
 }
