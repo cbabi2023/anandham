@@ -927,12 +927,84 @@ h4 {
   
   .footer-content {
     grid-template-columns: 1fr;
-    gap: 48px;
+    gap: 32px;
   }
   
   .footer-links {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 32px;
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  
+  .footer {
+    padding: 40px 0 0;
+    margin-top: 0;
+  }
+  
+  .footer-brand {
+    max-width: 100%;
+  }
+  
+  .footer-description {
+    font-size: 13px;
+    line-height: 1.6;
+  }
+  
+  .footer-logo-text {
+    font-size: 18px;
+  }
+  
+  .footer-social {
+    gap: 10px;
+  }
+  
+  .social-link {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .social-link svg {
+    width: 16px;
+    height: 16px;
+  }
+  
+  .footer-column {
+    gap: 12px;
+  }
+  
+  .footer-heading {
+    font-size: 12px;
+    margin-bottom: 8px;
+  }
+  
+  .footer-list {
+    gap: 10px;
+  }
+  
+  .footer-link {
+    font-size: 13px;
+  }
+  
+  .footer-bottom {
+    padding: 24px 0;
+    margin-top: 32px;
+  }
+  
+  .footer-bottom-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  
+  .footer-copyright {
+    font-size: 12px;
+  }
+  
+  .footer-meta-text {
+    font-size: 11px;
+  }
+  
+  .footer .container {
+    padding: 0 20px 20px;
   }
 }
 
@@ -1609,9 +1681,9 @@ section::before {
     display: none;
   }
   
-  /* Show footer on profile page */
+  /* Hide footer on profile page mobile */
   .profile-page footer {
-    display: block !important;
+    display: none !important;
   }
   
   /* Ensure profile page is visible on mobile */
