@@ -1455,8 +1455,19 @@ section::before {
     display: none;
   }
   
+  /* Mobile bottom nav - always visible on mobile like a mobile app */
   .mobile-bottom-nav {
-    display: flex;
+    display: flex !important;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+  }
+  
+  /* Ensure all pages have bottom padding for mobile nav */
+  main {
+    padding-bottom: 80px !important;
   }
   
   .knowledge-pillars-grid {
@@ -1612,6 +1623,7 @@ section::before {
     display: grid;
   }
   
+  /* Hide mobile nav on desktop */
   .mobile-bottom-nav {
     display: none;
   }

@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { User, Mail, Calendar, BookOpen, Settings, LogOut, Edit2, Award, FileText, Heart } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import MobileNav from "@/components/MobileNav";
 import Image from "next/image";
 
 export default function ProfilePage() {
@@ -229,6 +230,7 @@ export default function ProfilePage() {
       </div>
 
       <Footer />
+      <MobileNav />
     </main>
   );
 }

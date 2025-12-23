@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Search, Clock, ArrowLeft } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import MobileNav from "@/components/MobileNav";
 import Link from "next/link";
 
 export default function SearchPage() {
@@ -48,6 +49,7 @@ export default function SearchPage() {
       </div>
 
       <Footer />
+      <MobileNav />
     </main>
   );
 }
