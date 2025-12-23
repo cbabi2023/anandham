@@ -2450,121 +2450,236 @@ section::before {
 }
 
 @media (max-width: 768px) {
+  .profile-page {
+    padding: 0;
+  }
+  
+  .profile-page .container {
+    padding: 0;
+    max-width: 100%;
+  }
+  
   .profile-header {
-    padding: 24px 0;
-    gap: 20px;
+    padding: 20px 20px 24px;
+    gap: 16px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 0;
+    background: var(--background);
   }
 
   .profile-avatar {
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
+    border: 3px solid var(--border);
   }
 
   .profile-avatar-edit {
-    width: 32px;
-    height: 32px;
+    width: 28px;
+    height: 28px;
+    border: 2px solid var(--background);
+  }
+
+  .profile-avatar-edit svg {
+    width: 14px;
+    height: 14px;
   }
 
   .profile-name {
-    font-size: 24px;
+    font-size: 22px;
+    font-weight: 600;
   }
 
   .profile-email,
   .profile-joined {
-    font-size: 14px;
+    font-size: 13px;
+    gap: 6px;
+  }
+  
+  .profile-email svg,
+  .profile-joined svg {
+    width: 14px;
+    height: 14px;
   }
 
   .profile-actions {
-    flex-direction: column;
+    flex-direction: row;
     width: 100%;
-    max-width: 300px;
+    max-width: 100%;
+    gap: 8px;
+    margin-top: 4px;
   }
 
   .profile-actions .btn {
-    width: 100%;
+    flex: 1;
+    padding: 10px 16px;
+    font-size: 13px;
+    min-width: 0;
+  }
+  
+  .profile-actions .btn svg {
+    width: 14px;
+    height: 14px;
   }
 
   .profile-stats {
     grid-template-columns: 1fr;
-    gap: 16px;
-    margin-bottom: 32px;
+    gap: 12px;
+    margin-bottom: 0;
+    padding: 16px 20px;
+    background: var(--background);
+    border-bottom: 1px solid var(--border);
   }
 
   .profile-stat-card {
-    padding: 20px;
+    padding: 16px;
+    border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
   }
 
   .profile-stat-icon {
-    width: 48px;
-    height: 48px;
+    width: 44px;
+    height: 44px;
+  }
+  
+  .profile-stat-icon svg {
+    width: 20px;
+    height: 20px;
   }
 
   .profile-stat-value {
-    font-size: 24px;
+    font-size: 22px;
+    font-weight: 700;
+  }
+  
+  .profile-stat-label {
+    font-size: 12px;
   }
 
   .profile-content-grid {
     grid-template-columns: 1fr;
-    gap: 24px;
-    margin-bottom: 32px;
+    gap: 0;
+    margin-bottom: 0;
+    padding: 0;
   }
 
   .profile-card {
-    border-radius: var(--radius-md);
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    box-shadow: none;
+    margin-bottom: 0;
+  }
+  
+  .profile-card:not(:last-child) {
+    border-bottom: 1px solid var(--border);
   }
 
   .profile-card-header {
-    padding: 20px 20px 0;
-    padding-bottom: 16px;
-    margin-bottom: 20px;
+    padding: 16px 20px;
+    padding-bottom: 12px;
+    margin-bottom: 0;
+    border-bottom: 1px solid var(--border);
+    background: var(--card);
   }
 
   .profile-card-content {
-    padding: 0 20px 20px;
+    padding: 12px 20px 16px;
+    background: var(--background);
   }
 
   .profile-card-title {
-    font-size: 18px;
+    font-size: 16px;
+    font-weight: 600;
   }
 
   .profile-detail-item {
-    padding: 14px 0;
+    padding: 12px 0;
+    gap: 6px;
+  }
+  
+  .profile-detail-item:not(:last-child) {
+    border-bottom: 1px solid var(--border);
   }
 
   .profile-detail-label {
-    font-size: 12px;
+    font-size: 11px;
+    gap: 6px;
+  }
+  
+  .profile-detail-label svg {
+    width: 14px;
+    height: 14px;
   }
 
   .profile-detail-value {
-    font-size: 15px;
+    font-size: 14px;
+    font-weight: 500;
   }
 
   .profile-activity-item {
-    padding: 14px 0;
+    padding: 12px 0;
+  }
+  
+  .profile-activity-item:not(:last-child) {
+    border-bottom: 1px solid var(--border);
   }
 
   .profile-activity-title {
-    font-size: 15px;
+    font-size: 14px;
+    font-weight: 600;
   }
-
+  
   .profile-activity-meta {
     flex-wrap: wrap;
-    gap: 8px;
+    gap: 6px;
+    font-size: 11px;
+  }
+  
+  .profile-activity-type {
+    padding: 3px 8px;
+    font-size: 10px;
   }
 
   .profile-quick-actions {
     grid-template-columns: 1fr;
-    gap: 12px;
+    gap: 0;
+    padding: 0;
+    border-top: 1px solid var(--border);
+    background: var(--background);
   }
 
   .profile-action-btn {
-    padding: 14px 20px;
+    padding: 16px 20px;
     font-size: 14px;
+    font-weight: 500;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    justify-content: flex-start;
+    background: var(--card);
   }
-
-  /* Container padding for mobile */
-  .container {
-    padding: 24px 16px;
+  
+  .profile-action-btn:not(:last-child) {
+    border-bottom: 1px solid var(--border);
+  }
+  
+  .profile-action-btn svg {
+    width: 18px;
+    height: 18px;
+  }
+  
+  .profile-action-btn:hover {
+    background: var(--muted);
+  }
+  
+  .profile-action-btn-danger {
+    color: #ef4444;
+  }
+  
+  .profile-action-btn-danger:hover {
+    background: rgba(239, 68, 68, 0.1);
   }
 }
 

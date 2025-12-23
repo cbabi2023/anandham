@@ -27,7 +27,7 @@ export default function ProfilePage() {
     <main className="min-h-screen bg-background profile-page">
       <Header />
       
-      <div className="container py-12 lg:py-20">
+      <div className="container py-0 lg:py-20">
         {/* Profile Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
