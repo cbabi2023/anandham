@@ -1,7 +1,11 @@
+"use client";
+
 import Image from "next/image";
 import { Library, GraduationCap } from "lucide-react";
+import { useLanguage } from "@/lib/contexts/LanguageContext";
 
 export default function HeroSection() {
+  const { t } = useLanguage();
   return (
     <section className="hero-section">
       <div className="container">
@@ -17,39 +21,37 @@ export default function HeroSection() {
               priority
             />
           </div>
-          <h1 className="hero-title-mobile">Sree Narayana Guru</h1>
-          <p className="hero-tagline-mobile">Study • Reflect • Understand</p>
+          <h1 className="hero-title-mobile">{t("hero.title")}</h1>
+          <p className="hero-tagline-mobile">{t("hero.tagline")}</p>
         </div>
 
         {/* Desktop Layout */}
         <div className="grid lg:grid-cols-2 gap-16 items-center hero-desktop">
           <div className="flex flex-col">
-            <span className="hero-eyebrow">sree narayana guru digital library</span>
+            <span className="hero-eyebrow">{t("hero.eyebrow")}</span>
             <h1 className="hero-title">
-              Sree Narayana Guru
+              {t("hero.title")}
               <br />
-              <span className="hero-title-accent">Life, Works & Dharma</span>
+              <span className="hero-title-accent">{t("hero.subtitle")}</span>
             </h1>
             <p className="hero-subtitle">
-              An authoritative digital archive for the rigorous study of
-              Guru's philosophy, literature, and interventions in social
-              reform.
+              {t("hero.description")}
             </p>
             <div className="hero-meta">
               <div className="hero-meta-item">
                 <Library size={14} style={{ color: "var(--primary)" }} />
-                <span>Critical editions & translations</span>
+                <span>{t("hero.meta.critical")}</span>
               </div>
               <div className="hero-meta-item">
                 <GraduationCap size={14} style={{ color: "var(--primary)" }} />
-                <span>For scholars, students & institutions</span>
+                <span>{t("hero.meta.scholars")}</span>
               </div>
             </div>
             <div className="hero-actions">
-              <button className="btn btn-primary">Explore Works</button>
-              <button className="btn btn-secondary">Learn the Dharma</button>
+              <button className="btn btn-primary">{t("hero.btn.explore")}</button>
+              <button className="btn btn-secondary">{t("hero.btn.learn")}</button>
               <a href="#research" className="hero-secondary-link">
-                Browse research & articles →
+                {t("hero.link.research")}
               </a>
             </div>
           </div>

@@ -6,18 +6,21 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import MobileNav from "@/components/MobileNav";
 import Image from "next/image";
+import { useLanguage } from "@/lib/contexts/LanguageContext";
 
 export default function ProfilePage() {
+  const { t } = useLanguage();
+  
   const stats = [
-    { label: "Works Read", value: "24", icon: BookOpen },
-    { label: "Articles Saved", value: "12", icon: FileText },
-    { label: "Favorites", value: "8", icon: Heart },
+    { label: t("profile.stats.works"), value: "24", icon: BookOpen },
+    { label: t("profile.stats.articles"), value: "12", icon: FileText },
+    { label: t("profile.stats.favorites"), value: "8", icon: Heart },
   ];
 
   const recentActivity = [
-    { title: "Atmopadesa Satakam", type: "Work", date: "2 days ago" },
-    { title: "Temple Entry Movement", type: "Article", date: "5 days ago" },
-    { title: "Advaita Vedanta Study", type: "Research", date: "1 week ago" },
+    { title: "Atmopadesa Satakam", type: t("nav.works"), date: "2 days ago" },
+    { title: "Temple Entry Movement", type: t("nav.research"), date: "5 days ago" },
+    { title: "Advaita Vedanta Study", type: t("nav.research"), date: "1 week ago" },
   ];
 
   return (
@@ -53,14 +56,14 @@ export default function ProfilePage() {
           </div>
           
           <div className="profile-info">
-            <h1 className="profile-name">Scholar Account</h1>
+            <h1 className="profile-name">{t("profile.name")}</h1>
             <p className="profile-email">
               <Mail size={16} />
-              scholar@anandham.org
+              {t("profile.email")}
             </p>
             <p className="profile-joined">
               <Calendar size={16} />
-              Member since January 2024
+              {t("profile.joined")}
             </p>
           </div>
 
@@ -71,7 +74,7 @@ export default function ProfilePage() {
               className="btn btn-primary"
             >
               <Edit2 size={16} />
-              Edit Profile
+              {t("profile.edit")}
             </motion.button>
             <motion.button
               whileHover={{ scale: 1.02 }}
@@ -79,7 +82,7 @@ export default function ProfilePage() {
               className="btn btn-secondary"
             >
               <Settings size={16} />
-              Settings
+              {t("profile.settings")}
             </motion.button>
           </div>
         </motion.div>
@@ -121,34 +124,34 @@ export default function ProfilePage() {
             className="profile-card"
           >
             <div className="profile-card-header">
-              <h2 className="profile-card-title">Account Details</h2>
+              <h2 className="profile-card-title">{t("profile.details.title")}</h2>
             </div>
             <div className="profile-card-content">
               <div className="profile-detail-item">
                 <div className="profile-detail-label">
                   <User size={18} />
-                  Full Name
+                  {t("profile.details.name")}
                 </div>
-                <div className="profile-detail-value">Scholar Account</div>
+                <div className="profile-detail-value">{t("profile.name")}</div>
               </div>
               <div className="profile-detail-item">
                 <div className="profile-detail-label">
                   <Mail size={18} />
-                  Email Address
+                  {t("profile.details.email")}
                 </div>
-                <div className="profile-detail-value">scholar@anandham.org</div>
+                <div className="profile-detail-value">{t("profile.email")}</div>
               </div>
               <div className="profile-detail-item">
                 <div className="profile-detail-label">
                   <Award size={18} />
-                  Account Type
+                  {t("profile.details.type")}
                 </div>
-                <div className="profile-detail-value">Academic Researcher</div>
+                <div className="profile-detail-value">{t("profile.details.typeValue")}</div>
               </div>
               <div className="profile-detail-item">
                 <div className="profile-detail-label">
                   <Calendar size={18} />
-                  Member Since
+                  {t("profile.details.memberSince")}
                 </div>
                 <div className="profile-detail-value">January 15, 2024</div>
               </div>
@@ -163,7 +166,7 @@ export default function ProfilePage() {
             className="profile-card"
           >
             <div className="profile-card-header">
-              <h2 className="profile-card-title">Recent Activity</h2>
+              <h2 className="profile-card-title">{t("profile.activity.title")}</h2>
             </div>
             <div className="profile-card-content">
               {recentActivity.map((activity, index) => (
@@ -200,7 +203,7 @@ export default function ProfilePage() {
             className="profile-action-btn"
           >
             <BookOpen size={20} />
-            <span>My Library</span>
+            <span>{t("profile.actions.library")}</span>
           </motion.button>
           <motion.button
             whileHover={{ scale: 1.02 }}
@@ -208,7 +211,7 @@ export default function ProfilePage() {
             className="profile-action-btn"
           >
             <FileText size={20} />
-            <span>Saved Articles</span>
+            <span>{t("profile.actions.saved")}</span>
           </motion.button>
           <motion.button
             whileHover={{ scale: 1.02 }}
@@ -216,7 +219,7 @@ export default function ProfilePage() {
             className="profile-action-btn"
           >
             <Heart size={20} />
-            <span>Favorites</span>
+            <span>{t("profile.actions.favorites")}</span>
           </motion.button>
           <motion.button
             whileHover={{ scale: 1.02 }}
@@ -224,7 +227,7 @@ export default function ProfilePage() {
             className="profile-action-btn profile-action-btn-danger"
           >
             <LogOut size={20} />
-            <span>Sign Out</span>
+            <span>{t("profile.actions.signOut")}</span>
           </motion.button>
         </motion.div>
       </div>

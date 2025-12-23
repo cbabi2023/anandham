@@ -1,33 +1,33 @@
 "use client";
 
-import { useState } from "react";
 import { Bookmark, Share2, Volume2 } from "lucide-react";
+import { useLanguage } from "@/lib/contexts/LanguageContext";
 
 export default function ThoughtOfTheDay() {
-  const [language, setLanguage] = useState("English");
+  const { t } = useLanguage();
 
   return (
     <section className="featured-quote-section desktop-quote-section">
       <div className="container">
         <div className="featured-quote-card">
           <h3 className="featured-quote-text">
-            "One Caste, One Religion, One God for Man."
+            "{t("quote.text")}"
           </h3>
           <p className="featured-quote-explanation">
-            The fundamental unity of humanity transcends all artificial divisions created by society.
+            {t("quote.explanation")}
           </p>
           <div className="featured-quote-actions">
             <button className="quote-action-btn">
               <Bookmark size={18} />
-              <span>Save</span>
+              <span>{t("quote.save")}</span>
             </button>
             <button className="quote-action-btn">
               <Share2 size={18} />
-              <span>Share</span>
+              <span>{t("quote.share")}</span>
             </button>
             <button className="quote-action-btn">
               <Volume2 size={18} />
-              <span>Listen</span>
+              <span>{t("quote.listen")}</span>
             </button>
           </div>
           <div className="quote-carousel-dots">

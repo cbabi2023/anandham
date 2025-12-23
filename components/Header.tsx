@@ -4,9 +4,10 @@ import { User, BookOpen, Menu, X } from "lucide-react";
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useLanguage } from "@/lib/contexts/LanguageContext";
 
 export default function Header() {
-  const [language, setLanguage] = useState("EN");
+  const { language, setLanguage, t } = useLanguage();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const pathname = usePathname();
 
@@ -19,26 +20,26 @@ export default function Header() {
         </Link>
 
         <div className="navbar-links">
-          <Link href="/" className={`nav-link ${pathname === "/" ? "active" : ""}`}>Home</Link>
-          <Link href="/life-history" className={`nav-link ${pathname === "/life-history" ? "active" : ""}`}>Life & History</Link>
-          <Link href="/works" className={`nav-link ${pathname === "/works" ? "active" : ""}`}>Works</Link>
-          <Link href="/philosophy" className={`nav-link ${pathname === "/philosophy" ? "active" : ""}`}>Philosophy</Link>
-          <Link href="/research" className={`nav-link ${pathname === "/research" ? "active" : ""}`}>Research</Link>
+          <Link href="/" className={`nav-link ${pathname === "/" ? "active" : ""}`}>{t("nav.home")}</Link>
+          <Link href="/life-history" className={`nav-link ${pathname === "/life-history" ? "active" : ""}`}>{t("nav.lifeHistory")}</Link>
+          <Link href="/works" className={`nav-link ${pathname === "/works" ? "active" : ""}`}>{t("nav.works")}</Link>
+          <Link href="/philosophy" className={`nav-link ${pathname === "/philosophy" ? "active" : ""}`}>{t("nav.philosophy")}</Link>
+          <Link href="/research" className={`nav-link ${pathname === "/research" ? "active" : ""}`}>{t("nav.research")}</Link>
         </div>
 
         <div className="navbar-actions">
           <div className="navbar-language-toggle">
             <button
-              className={`pill-toggle-item ${language === "EN" ? "active" : ""}`}
-              onClick={() => setLanguage("EN")}
+              className={`pill-toggle-item ${language === "en" ? "active" : ""}`}
+              onClick={() => setLanguage("en")}
             >
               EN
             </button>
             <button
-              className={`pill-toggle-item ${language === "MAL" ? "active" : ""}`}
-              onClick={() => setLanguage("MAL")}
+              className={`pill-toggle-item ${language === "ml" ? "active" : ""}`}
+              onClick={() => setLanguage("ml")}
             >
-              MAL
+              ML
             </button>
           </div>
           <Link
@@ -61,23 +62,23 @@ export default function Header() {
       {mobileMenuOpen && (
         <div className="navbar-mobile-menu">
           <div className="navbar-mobile-content">
-            <Link href="/" className={`nav-link ${pathname === "/" ? "active" : ""}`} onClick={() => setMobileMenuOpen(false)}>Home</Link>
-            <Link href="/life-history" className={`nav-link ${pathname === "/life-history" ? "active" : ""}`} onClick={() => setMobileMenuOpen(false)}>Life & History</Link>
-            <Link href="/works" className={`nav-link ${pathname === "/works" ? "active" : ""}`} onClick={() => setMobileMenuOpen(false)}>Works</Link>
-            <Link href="/philosophy" className={`nav-link ${pathname === "/philosophy" ? "active" : ""}`} onClick={() => setMobileMenuOpen(false)}>Philosophy</Link>
-            <Link href="/research" className={`nav-link ${pathname === "/research" ? "active" : ""}`} onClick={() => setMobileMenuOpen(false)}>Research</Link>
+            <Link href="/" className={`nav-link ${pathname === "/" ? "active" : ""}`} onClick={() => setMobileMenuOpen(false)}>{t("nav.home")}</Link>
+            <Link href="/life-history" className={`nav-link ${pathname === "/life-history" ? "active" : ""}`} onClick={() => setMobileMenuOpen(false)}>{t("nav.lifeHistory")}</Link>
+            <Link href="/works" className={`nav-link ${pathname === "/works" ? "active" : ""}`} onClick={() => setMobileMenuOpen(false)}>{t("nav.works")}</Link>
+            <Link href="/philosophy" className={`nav-link ${pathname === "/philosophy" ? "active" : ""}`} onClick={() => setMobileMenuOpen(false)}>{t("nav.philosophy")}</Link>
+            <Link href="/research" className={`nav-link ${pathname === "/research" ? "active" : ""}`} onClick={() => setMobileMenuOpen(false)}>{t("nav.research")}</Link>
             <div className="pill-toggle">
               <button
-                className={`pill-toggle-item ${language === "EN" ? "active" : ""}`}
-                onClick={() => setLanguage("EN")}
+                className={`pill-toggle-item ${language === "en" ? "active" : ""}`}
+                onClick={() => setLanguage("en")}
               >
                 EN
               </button>
               <button
-                className={`pill-toggle-item ${language === "MAL" ? "active" : ""}`}
-                onClick={() => setLanguage("MAL")}
+                className={`pill-toggle-item ${language === "ml" ? "active" : ""}`}
+                onClick={() => setLanguage("ml")}
               >
-                MAL
+                ML
               </button>
             </div>
           </div>

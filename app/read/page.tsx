@@ -6,8 +6,10 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import MobileNav from "@/components/MobileNav";
 import Link from "next/link";
+import { useLanguage } from "@/lib/contexts/LanguageContext";
 
 export default function ReadPage() {
+  const { t } = useLanguage();
   return (
     <main className="min-h-screen bg-background">
       <Header />
@@ -28,22 +30,21 @@ export default function ReadPage() {
             <BookOpen size={64} />
           </motion.div>
           
-          <h1 className="coming-soon-title">Coming Soon</h1>
+          <h1 className="coming-soon-title">{t("comingSoon.title")}</h1>
           <p className="coming-soon-subtitle">
-            The Reading Library is currently under development. 
-            We're building a comprehensive collection of works, translations, and commentaries.
+            {t("comingSoon.read.desc")}
           </p>
           
           <div className="coming-soon-features">
             <div className="coming-soon-feature">
               <Clock size={20} />
-              <span>Expected launch: Q2 2024</span>
+              <span>{t("comingSoon.launch")}</span>
             </div>
           </div>
 
           <Link href="/" className="coming-soon-link">
             <ArrowLeft size={18} />
-            <span>Back to Home</span>
+            <span>{t("comingSoon.back")}</span>
           </Link>
         </motion.div>
       </div>

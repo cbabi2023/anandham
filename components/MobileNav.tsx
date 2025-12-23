@@ -3,23 +3,25 @@
 import { Home, BookOpen, Search, Users, User } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useLanguage } from "@/lib/contexts/LanguageContext";
 
 export default function MobileNav() {
   const pathname = usePathname();
+  const { t } = useLanguage();
 
   const navItems = [
-    { icon: Home, label: "Home", href: "/" },
-    { icon: BookOpen, label: "Read", href: "/read" },
-    { icon: Search, label: "Search", href: "/search" },
-    { icon: Users, label: "Community", href: "/community" },
-    { icon: User, label: "Profile", href: "/profile" },
+    { icon: Home, label: t("nav.home"), href: "/", key: "nav.home" },
+    { icon: BookOpen, label: t("nav.read"), href: "/read", key: "nav.read" },
+    { icon: Search, label: t("nav.search"), href: "/search", key: "nav.search" },
+    { icon: Users, label: t("nav.community"), href: "/community", key: "nav.community" },
+    { icon: User, label: t("nav.profile"), href: "/profile", key: "nav.profile" },
   ];
 
   return (
     <nav className="mobile-bottom-nav">
       {navItems.map((item) => (
         <Link
-          key={item.label}
+          key={item.key}
           href={item.href}
           className={`mobile-nav-item ${pathname === item.href ? "active" : ""}`}
         >
