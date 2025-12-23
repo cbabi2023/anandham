@@ -1,4 +1,4 @@
-import { Hourglass, ScrollText, Scale, Users, Landmark, Music } from "lucide-react";
+import { Hourglass, ScrollText, Scale, Users, Landmark, Music, UserCheck } from "lucide-react";
 
 const pillars = [
   {
@@ -27,9 +27,9 @@ const pillars = [
     description: "Lyrics, meanings, and audio renditions of devotional compositions.",
   },
   {
-    icon: Users,
-    title: "Articles",
-    description: "Research articles and academic contributions.",
+    icon: UserCheck,
+    title: "Disciples & Work",
+    description: "Profiles of Guru's disciples and their contributions to social reform and philosophy.",
   },
 ];
 
