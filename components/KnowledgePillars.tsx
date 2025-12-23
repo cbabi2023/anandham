@@ -2,40 +2,40 @@ import { Hourglass, ScrollText, Scale, Users, Landmark, Music } from "lucide-rea
 
 const pillars = [
   {
-    icon: Hourglass,
-    title: "Life & Biography",
-    description: "Timeline-based history of Guru's life, travels, and interactions.",
-  },
-  {
     icon: ScrollText,
-    title: "Krithis & Texts",
+    title: "Krithis",
     description: "Digital library of original poems, philosophical treatises, and translations.",
   },
   {
     icon: Scale,
-    title: "Sree Narayana Dharma",
+    title: "Dharma",
     description: "Analysis of the ethical and philosophical system propounded by the Guru.",
   },
   {
-    icon: Users,
-    title: "Disciples & Lineage",
-    description: "Biographies of Kumaran Asan, Dr. Palpu, and other intellectual successors.",
+    icon: Hourglass,
+    title: "Life",
+    description: "Timeline-based history of Guru's life, travels, and interactions.",
   },
   {
     icon: Landmark,
-    title: "Temples & Institutions",
+    title: "Temples",
     description: "Geography, architectural symbolism, and purpose of consecrated sites.",
   },
   {
     icon: Music,
-    title: "Keerthanam & Prayers",
+    title: "Keerthanam",
     description: "Lyrics, meanings, and audio renditions of devotional compositions.",
+  },
+  {
+    icon: Users,
+    title: "Articles",
+    description: "Research articles and academic contributions.",
   },
 ];
 
 export default function KnowledgePillars() {
   return (
-    <section className="py-12 lg:py-20">
+    <section className="py-12 lg:py-20 knowledge-pillars-section">
       <div className="container flex flex-col gap-12">
         <div className="flex flex-col gap-2">
           <h2 className="text-4xl font-bold pt-[10px]" style={{ fontFamily: "var(--font-family-heading)", letterSpacing: "-0.02em" }}>Knowledge Pillars</h2>
@@ -44,12 +44,20 @@ export default function KnowledgePillars() {
           </p>
         </div>
 
-        <div
-          className="grid gap-6 pt-[27px] pb-[27px]"
-          style={{
-            gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
-          }}
-        >
+        {/* Mobile version - 3x2 grid */}
+        <div className="knowledge-pillars-grid">
+          {pillars.map((pillar, index) => (
+            <div key={index} className="knowledge-pillar-card">
+              <div className="knowledge-pillar-icon">
+                <pillar.icon size={24} />
+              </div>
+              <span className="knowledge-pillar-label">{pillar.title}</span>
+            </div>
+          ))}
+        </div>
+        
+        {/* Desktop version with descriptions */}
+        <div className="knowledge-pillars-desktop">
           {pillars.map((pillar, index) => (
             <div key={index} className="feature-card">
               <div className="feature-icon">

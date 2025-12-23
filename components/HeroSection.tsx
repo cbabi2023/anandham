@@ -5,7 +5,24 @@ export default function HeroSection() {
   return (
     <section className="hero-section">
       <div className="container">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        {/* Mobile Layout */}
+        <div className="hero-mobile">
+          <div className="hero-profile-img">
+            <Image
+              src="/abcguru.png"
+              alt="Sree Narayana Guru"
+              width={44}
+              height={44}
+              className="hero-profile-picture"
+              priority
+            />
+          </div>
+          <h1 className="hero-title-mobile">Sree Narayana Guru</h1>
+          <p className="hero-tagline-mobile">Study • Reflect • Understand</p>
+        </div>
+
+        {/* Desktop Layout */}
+        <div className="grid lg:grid-cols-2 gap-16 items-center hero-desktop">
           <div className="flex flex-col">
             <span className="hero-eyebrow">sree narayana guru digital library</span>
             <h1 className="hero-title">

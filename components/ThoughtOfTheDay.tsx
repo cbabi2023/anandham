@@ -1,82 +1,40 @@
 "use client";
 
 import { useState } from "react";
+import { Bookmark, Share2, Volume2 } from "lucide-react";
 
 export default function ThoughtOfTheDay() {
-  const [language, setLanguage] = useState("Malayalam");
+  const [language, setLanguage] = useState("English");
 
   return (
-    <section
-      className="py-12 bg-muted"
-      style={{
-        borderTop: "1px solid var(--border)",
-        borderBottom: "1px solid var(--border)",
-      }}
-    >
-      <div 
-        className="container"
-        style={{ 
-          paddingTop: "47px",
-          paddingBottom: "47px",
-          paddingLeft: "29px",
-          paddingRight: "29px"
-        }}
-      >
-        <div
-          className="border rounded-xl bg-card"
-          style={{ padding: "40px 48px", maxWidth: 900, margin: "0 auto", boxShadow: "var(--shadow-md)" }}
-        >
-          <div
-            className="flex justify-between items-center gap-4 mb-4"
-            style={{ marginBottom: 16 }}
-          >
-            <div className="flex flex-col gap-1">
-              <span
-                className="text-sm font-medium text-muted-foreground"
-                style={{ letterSpacing: "0.16em", textTransform: "uppercase" }}
-              >
-                Thought of the Day
-              </span>
-              <span className="text-xs text-muted-foreground">
-                Curated excerpt for reflective, non-devotional study.
-              </span>
-            </div>
-            <div className="pill-toggle">
-              <button
-                className={`pill-toggle-item ${language === "Malayalam" ? "active" : ""}`}
-                onClick={() => setLanguage("Malayalam")}
-              >
-                Malayalam
-              </button>
-              <button
-                className={`pill-toggle-item ${language === "English" ? "active" : ""}`}
-                onClick={() => setLanguage("English")}
-              >
-                English
-              </button>
-            </div>
+    <section className="featured-quote-section desktop-quote-section">
+      <div className="container">
+        <div className="featured-quote-card">
+          <h3 className="featured-quote-text">
+            "One Caste, One Religion, One God for Man."
+          </h3>
+          <p className="featured-quote-explanation">
+            The fundamental unity of humanity transcends all artificial divisions created by society.
+          </p>
+          <div className="featured-quote-actions">
+            <button className="quote-action-btn">
+              <Bookmark size={18} />
+              <span>Save</span>
+            </button>
+            <button className="quote-action-btn">
+              <Share2 size={18} />
+              <span>Share</span>
+            </button>
+            <button className="quote-action-btn">
+              <Volume2 size={18} />
+              <span>Listen</span>
+            </button>
           </div>
-
-          {language === "Malayalam" ? (
-            <div className="mb-4">
-              <h3
-                className="text-3xl font-medium"
-                style={{ color: "var(--foreground)", lineHeight: 1.6, marginBottom: 16, fontFamily: "var(--font-family-heading)" }}
-              >
-                "അവനവൻ ആത്മസുഖത്തിനായി ആചരിക്കുന്നതു<br />അപരംസുഖത്തിനായിവരേണം."
-              </h3>
-            </div>
-          ) : null}
-
-          <p className="text-sm text-muted-foreground mb-2">
-            From <em>Atmopadesa Satakam</em>, this verse argues that practices
-            aimed at one's own well-being are ethically sound only when they
-            also advance the well-being of others.
-          </p>
-          <p className="text-xs text-muted-foreground">
-            The verse is presented here as a philosophical proposition,
-            inviting analytical reading rather than devotional recitation.
-          </p>
+          <div className="quote-carousel-dots">
+            <span className="dot active"></span>
+            <span className="dot"></span>
+            <span className="dot"></span>
+          </div>
         </div>
       </div>
     </section>

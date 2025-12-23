@@ -1,91 +1,85 @@
-import { BookOpen } from "lucide-react";
+import { BookOpen, Mail, Github, Twitter, Linkedin } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer
-      className="py-12 bg-secondary text-secondary-foreground"
-      style={{ borderTop: "1px solid var(--border)" }}
-    >
+    <footer className="footer">
       <div className="container">
-        <div
-          className="grid gap-12 mb-12"
-          style={{
-            gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
-          }}
-        >
-          <div className="flex flex-col gap-4">
-            <div className="flex items-center gap-2">
-              <BookOpen size={20} />
-              <span className="font-semibold">Anandham</span>
+        <div className="footer-content">
+          <div className="footer-brand">
+            <div className="footer-logo">
+              <BookOpen size={24} style={{ color: "var(--primary)" }} />
+              <span className="footer-logo-text">Anandham</span>
             </div>
-            <p className="text-sm text-muted-foreground" style={{ maxWidth: 300 }}>
-              A non-profit academic initiative to preserve, translate, and
-              digitize the life and works of Sree Narayana Guru for future
-              generations.
+            <p className="footer-description">
+              A non-profit academic initiative dedicated to preserving, translating, and digitizing the life and works of Sree Narayana Guru for scholarly research and future generations.
             </p>
+            <div className="footer-social">
+              <a href="#" className="social-link" aria-label="Email">
+                <Mail size={18} />
+              </a>
+              <a href="#" className="social-link" aria-label="GitHub">
+                <Github size={18} />
+              </a>
+              <a href="#" className="social-link" aria-label="Twitter">
+                <Twitter size={18} />
+              </a>
+              <a href="#" className="social-link" aria-label="LinkedIn">
+                <Linkedin size={18} />
+              </a>
+            </div>
           </div>
 
-          <div className="flex flex-col gap-3">
-            <h4 className="font-semibold text-sm">Project</h4>
-            <a href="#" className="text-sm text-muted-foreground hover:text-foreground">
-              About Us
-            </a>
-            <a href="#" className="text-sm text-muted-foreground hover:text-foreground">
-              Methodology
-            </a>
-            <a href="#" className="text-sm text-muted-foreground hover:text-foreground">
-              Team
-            </a>
-          </div>
+          <div className="footer-links">
+            <div className="footer-column">
+              <h4 className="footer-heading">Project</h4>
+              <ul className="footer-list">
+                <li><a href="#" className="footer-link">About Us</a></li>
+                <li><a href="#" className="footer-link">Methodology</a></li>
+                <li><a href="#" className="footer-link">Team</a></li>
+                <li><a href="#" className="footer-link">Partners</a></li>
+              </ul>
+            </div>
 
-          <div className="flex flex-col gap-3">
-            <h4 className="font-semibold text-sm">Resources</h4>
-            <a href="#" className="text-sm text-muted-foreground hover:text-foreground">
-              Sources
-            </a>
-            <a href="#" className="text-sm text-muted-foreground hover:text-foreground">
-              Digital Library
-            </a>
-            <a href="#" className="text-sm text-muted-foreground hover:text-foreground">
-              Academic Disclaimer
-            </a>
-          </div>
+            <div className="footer-column">
+              <h4 className="footer-heading">Resources</h4>
+              <ul className="footer-list">
+                <li><a href="#" className="footer-link">Digital Library</a></li>
+                <li><a href="#" className="footer-link">Research Archive</a></li>
+                <li><a href="#" className="footer-link">Publications</a></li>
+                <li><a href="#" className="footer-link">Academic Disclaimer</a></li>
+              </ul>
+            </div>
 
-          <div className="flex flex-col gap-3">
-            <h4 className="font-semibold text-sm">Connect</h4>
-            <a href="#" className="text-sm text-muted-foreground hover:text-foreground">
-              Contact
-            </a>
-            <a href="#" className="text-sm text-muted-foreground hover:text-foreground">
-              Contribute
-            </a>
-            <a href="#" className="text-sm text-muted-foreground hover:text-foreground">
-              Newsletter
-            </a>
+            <div className="footer-column">
+              <h4 className="footer-heading">Connect</h4>
+              <ul className="footer-list">
+                <li><a href="#" className="footer-link">Contact</a></li>
+                <li><a href="#" className="footer-link">Contribute</a></li>
+                <li><a href="#" className="footer-link">Newsletter</a></li>
+                <li><a href="#" className="footer-link">Support</a></li>
+              </ul>
+            </div>
+
+            <div className="footer-column">
+              <h4 className="footer-heading">Legal</h4>
+              <ul className="footer-list">
+                <li><a href="#" className="footer-link">Privacy Policy</a></li>
+                <li><a href="#" className="footer-link">Terms of Service</a></li>
+                <li><a href="#" className="footer-link">Copyright</a></li>
+                <li><a href="#" className="footer-link">Accessibility</a></li>
+              </ul>
+            </div>
           </div>
         </div>
         
-        <div
-          className="pt-8 border-t flex justify-between items-center flex-wrap gap-4"
-          style={{ borderColor: "var(--border)" }}
-        >
-          <div className="flex items-center gap-2">
-            <div className="pill-toggle" style={{ background: "var(--background)" }}>
-              <button className="pill-toggle-item active">English</button>
-              <button className="pill-toggle-item">Malayalam</button>
+        <div className="footer-bottom">
+          <div className="footer-bottom-content">
+            <p className="footer-copyright">
+              © {new Date().getFullYear()} Anandham Digital Library. All rights reserved.
+            </p>
+            <div className="footer-meta">
+              <span className="footer-meta-text">Academic • Non-profit • Open Access</span>
             </div>
-          </div>
-          <p className="text-xs text-muted-foreground">
-            © 2024 Anandham. All rights reserved.
-          </p>
-          <div className="flex gap-4">
-            <a href="#" className="text-xs text-muted-foreground hover:text-foreground">
-              Privacy Policy
-            </a>
-            <span className="text-xs text-muted-foreground">|</span>
-            <a href="#" className="text-xs text-muted-foreground hover:text-foreground">
-              Terms of Service
-            </a>
           </div>
         </div>
       </div>

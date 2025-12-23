@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function FeaturedWork() {
   return (
-    <section className="py-12 bg-secondary">
+    <section className="py-20 bg-secondary featured-work-section">
       <div className="container pt-3">
         <div className="bg-card border rounded-xl pt-8 pb-8 px-6 lg:pt-[40px] lg:pb-[40px] lg:pl-[56px] lg:pr-[56px] flex flex-col lg:flex-row items-start gap-6 lg:gap-10 shadow-md">
           <div className="hidden lg:block relative" style={{ width: 300, height: 240, flexShrink: 0 }}>

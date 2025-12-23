@@ -21,7 +21,7 @@ const aspects = [
 
 export default function GuruAndSociety() {
   return (
-    <section className="py-20">
+    <section className="py-20 guru-society-section">
       <div
         className="container grid gap-12"
         style={{

@@ -23,7 +23,7 @@ const articles = [
 
 export default function ResearchArticles() {
   return (
-    <section className="py-20" id="research">
+    <section className="py-20 research-articles-section" id="research">
       <div className="container flex flex-col gap-8">
         <div className="flex justify-between items-center flex-wrap gap-4">
           <div className="flex flex-col gap-1">

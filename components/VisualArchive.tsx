@@ -30,7 +30,7 @@ export default function VisualArchive() {
   const [activeTab, setActiveTab] = useState("Manuscripts");
 
   return (
-    <section className="py-12 bg-muted">
+    <section className="py-20 bg-muted visual-archive-section">
       <div className="container flex flex-col gap-8">
         <div className="flex justify-between items-end flex-wrap gap-4">
           <div className="flex flex-col gap-2">
