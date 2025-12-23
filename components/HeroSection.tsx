@@ -16,8 +16,8 @@ export default function HeroSection() {
               <span className="hero-mobile-eyebrow">{t("hero.eyebrow")}</span>
               <h1 className="hero-title-mobile">
                 {t("hero.title")}
-                <span className="hero-title-mobile-accent">{t("hero.subtitle")}</span>
               </h1>
+              <p className="hero-title-mobile-accent">{t("hero.subtitle")}</p>
             </div>
             
             <div className="hero-mobile-image-wrapper">
@@ -28,7 +28,7 @@ export default function HeroSection() {
                   fill
                   className="hero-mobile-image"
                   priority
-                  sizes="(max-width: 768px) 280px"
+                  sizes="(max-width: 768px) 240px"
                   quality={90}
                 />
               </div>
@@ -41,18 +41,13 @@ export default function HeroSection() {
               
               <div className="hero-mobile-meta">
                 <div className="hero-mobile-meta-item">
-                  <Library size={16} />
+                  <Library size={14} />
                   <span>{t("hero.meta.critical")}</span>
                 </div>
                 <div className="hero-mobile-meta-item">
-                  <GraduationCap size={16} />
+                  <GraduationCap size={14} />
                   <span>{t("hero.meta.scholars")}</span>
                 </div>
-              </div>
-              
-              <div className="hero-mobile-actions">
-                <button className="btn-mobile-primary">{t("hero.btn.explore")}</button>
-                <button className="btn-mobile-secondary">{t("hero.btn.learn")}</button>
               </div>
             </div>
           </div>
