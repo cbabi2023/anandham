@@ -1,6 +1,6 @@
 "use client";
 
-import { Home, BookOpen, Search, MessageCircle, User } from "lucide-react";
+import { Home, BookOpen, Search, Users, User } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -11,7 +11,7 @@ export default function MobileNav() {
     { icon: Home, label: "Home", href: "/" },
     { icon: BookOpen, label: "Read", href: "/read" },
     { icon: Search, label: "Search", href: "/search" },
-    { icon: MessageCircle, label: "Group Chat", href: "/group-chat" },
+    { icon: Users, label: "Community", href: "/community" },
     { icon: User, label: "Profile", href: "/profile" },
   ];
 

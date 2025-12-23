@@ -2445,6 +2445,112 @@ section::before {
   }
 }
 
+/* Coming Soon Page Styles */
+.coming-soon-container {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.coming-soon-icon {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-foreground);
+  box-shadow: 0 8px 24px rgba(37, 99, 235, 0.2);
+  margin-bottom: 8px;
+}
+
+.coming-soon-title {
+  font-size: 42px;
+  font-weight: 600;
+  color: var(--foreground);
+  font-family: var(--font-family-heading);
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.coming-soon-subtitle {
+  font-size: 18px;
+  color: var(--muted-foreground);
+  line-height: 1.7;
+  max-width: 500px;
+  margin: 0;
+}
+
+.coming-soon-features {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.coming-soon-feature {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 20px;
+  background-color: var(--muted);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  font-size: 14px;
+  color: var(--muted-foreground);
+}
+
+.coming-soon-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  margin-top: 16px;
+  background-color: var(--primary);
+  color: var(--primary-foreground);
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.2);
+}
+
+.coming-soon-link:hover {
+  background-color: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+@media (max-width: 768px) {
+  .coming-soon-container {
+    padding: 0 16px;
+  }
+
+  .coming-soon-icon {
+    width: 100px;
+    height: 100px;
+  }
+
+  .coming-soon-icon svg {
+    width: 48px;
+    height: 48px;
+  }
+
+  .coming-soon-title {
+    font-size: 32px;
+  }
+
+  .coming-soon-subtitle {
+    font-size: 16px;
+  }
+}
+
 /* Desktop Design Improvements */
 @media (min-width: 769px) {
   /* Section spacing */
