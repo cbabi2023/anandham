@@ -1521,8 +1521,9 @@ section::before {
   }
   
   /* Show header on profile page mobile */
+  /* Keep navbar hidden on profile page mobile */
   .profile-page .navbar {
-    display: block !important;
+    display: none !important;
   }
   
   /* Mobile hero improvements */
