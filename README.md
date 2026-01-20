@@ -1,269 +1,111 @@
-# Anandham - Medium Clone
+# Anandham - Multi-Platform Project
 
-A pixel-perfect Medium clone built with Next.js 16, TypeScript, and Tailwind CSS. This project replicates Medium's UI/UX design with 100% accuracy, featuring reusable components, responsive design, and modern development practices.
+This is a monorepo containing three separate applications for the Anandham platform:
 
-## ✨ Features
-
-- 🎨 **100% Medium UI/UX** - Exact replica of Medium's design system
-- 📱 **Fully Responsive** - Perfect on mobile, tablet, and desktop
-- 🚀 **Next.js 16** with App Router
-- 📘 **TypeScript** for type safety
-- 🎨 **Tailwind CSS v4** for styling
-- 🧩 **Reusable Components** - All components are modular and reusable
-- ⚡ **Optimized Performance** - Fast builds and runtime
-
-## 🛠️ Tech Stack
-
-- **Framework**: Next.js 16
-- **Language**: TypeScript
-- **Styling**: Tailwind CSS v4
-- **Icons**: Lucide React
-- **Utilities**: clsx, tailwind-merge, class-variance-authority
+- **web-customer**: Customer-facing web application (Next.js + TypeScript)
+- **web-admin**: Admin dashboard web application (Next.js + TypeScript)
+- **mobile-customer**: Customer mobile application (Flutter)
 
 ## 📁 Project Structure
 
 ```
 anandham/
-├── app/                    # Next.js app directory
-│   ├── layout.tsx         # Root layout with fonts
-│   ├── page.tsx           # Homepage (Medium-style feed)
-│   └── globals.css        # Global styles with Medium colors
-├── components/
-│   ├── ui/                # Reusable UI components
-│   │   ├── article-card.tsx    # Medium-style article cards
-│   │   ├── button.tsx           # Medium-style buttons
-│   │   ├── card.tsx             # Generic card component
-│   │   ├── input.tsx            # Medium-style inputs
-│   │   ├── badge.tsx            # Badge component
-│   │   ├── avatar.tsx           # Avatar component
-│   │   └── container.tsx        # Container with article width
-│   ├── layout/            # Layout components
-│   │   ├── medium-header.tsx    # Medium-style header
-│   │   └── sidebar.tsx          # Left sidebar navigation
-│   └── sections/          # Page sections (legacy - can be removed)
-├── lib/                   # Utility functions
-│   ├── utils.ts          # cn() utility for className merging
-│   └── animations.ts     # Reusable animation variants
-├── hooks/                 # Custom React hooks
-│   ├── use-scroll.ts
-│   └── use-media-query.ts
-└── types/                 # TypeScript type definitions
-    └── index.ts
+├── web-customer/      # Customer web app (Next.js + TypeScript)
+├── web-admin/         # Admin dashboard (Next.js + TypeScript)
+└── mobile-customer/   # Mobile app (Flutter)
 ```
 
 ## 🚀 Getting Started
 
-### Prerequisites
+### Web Customer Application
 
-- Node.js 18+ installed
-- npm, yarn, pnpm, or bun
+The customer-facing web application built with Next.js 16, TypeScript, and Tailwind CSS.
 
-### Installation
-
-1. Clone the repository:
 ```bash
-git clone <your-repo-url>
-cd anandham
-```
-
-2. Install dependencies:
-```bash
+cd web-customer
 npm install
-```
-
-3. Run the development server:
-```bash
 npm run dev
 ```
 
-4. Open [http://localhost:3000](http://localhost:3000) in your browser.
+Visit [http://localhost:3000](http://localhost:3000) to see the application.
 
-## 📦 Component Usage
+### Web Admin Application
 
-### ArticleCard Component
+The admin dashboard for managing the platform.
 
-```tsx
-import ArticleCard from "@/components/ui/article-card";
-
-<ArticleCard
-  title="Article Title"
-  excerpt="Article excerpt or summary..."
-  author={{ name: "John Doe", avatar: "/avatar.jpg" }}
-  readingTime={5}
-  publishedAt="2 days ago"
-  tags={["Technology", "Web Dev"]}
-  imageUrl="/article-image.jpg"
-/>
+```bash
+cd web-admin
+npm install
+npm run dev
 ```
 
-### Button Component
+Visit [http://localhost:3000](http://localhost:3000) to see the admin dashboard.
 
-```tsx
-import Button from "@/components/ui/button";
+**Note**: The admin app will run on a different port if the customer app is already running. You can specify a port with `npm run dev -- -p 3001`.
 
-// Primary button (black)
-<Button variant="primary" size="md">Get started</Button>
+### Mobile Customer Application
 
-// Follow button (green)
-<Button variant="follow" size="sm">Follow</Button>
+The Flutter mobile application for customers.
 
-// Secondary button
-<Button variant="secondary">Secondary</Button>
-
-// Ghost button
-<Button variant="ghost">Ghost</Button>
+```bash
+cd mobile-customer
+flutter pub get
+flutter run
 ```
 
-### MediumHeader Component
+Make sure you have Flutter installed and a device/emulator running.
 
-```tsx
-import MediumHeader from "@/components/layout/medium-header";
+## 🛠️ Tech Stack
 
-<MediumHeader />
-```
+### Web Applications (web-customer & web-admin)
+- **Framework**: Next.js 16
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS v4
+- **Icons**: Lucide React
 
-### Sidebar Component
+### Mobile Application (mobile-customer)
+- **Framework**: Flutter
+- **Language**: Dart
+- **Platforms**: iOS, Android, Web, Windows, macOS, Linux
 
-```tsx
-import Sidebar from "@/components/layout/sidebar";
+## 📝 Development
 
-<Sidebar />
-```
+Each application is independent and can be developed separately. They share the same repository for easier code management and version control.
 
-### Container Component
+### Running All Applications
 
-```tsx
-import Container from "@/components/ui/container";
+You can run all three applications simultaneously:
 
-// Article width (680px - Medium's standard)
-<Container size="article">
-  <p>Your article content here</p>
-</Container>
+1. **Terminal 1** - Web Customer:
+   ```bash
+   cd web-customer && npm run dev
+   ```
 
-// Other sizes
-<Container size="sm">Small</Container>
-<Container size="md">Medium</Container>
-<Container size="lg">Large</Container>
-<Container size="xl">Extra Large</Container>
-```
+2. **Terminal 2** - Web Admin:
+   ```bash
+   cd web-admin && npm run dev -- -p 3001
+   ```
 
-## 🎨 Design System
+3. **Terminal 3** - Mobile Customer:
+   ```bash
+   cd mobile-customer && flutter run
+   ```
 
-### Colors (Medium-inspired)
+## 📦 Dependencies
 
-- **Background**: `#FFFFFF` (white)
-- **Foreground**: `#000000` (black)
-- **Foreground Secondary**: `#242424`
-- **Foreground Muted**: `#757575`
-- **Foreground Light**: `#9E9E9E`
-- **Accent Green**: `#1A8917` (for follow buttons)
-- **Border**: `#E6E6E6`
-- **Hover Background**: `#F5F5F5`
-
-### Typography
-
-- **Serif Font**: Georgia (for article body text)
-- **Sans-serif Font**: Inter (for UI elements)
-- **Article Body**: 21px, line-height 1.58
-- **Headings**: Serif font family
-
-### Layout
-
-- **Article Width**: 680px (Medium's standard)
-- **Sidebar Width**: 256px (desktop only)
-- **Responsive**: Mobile-first approach
-
-## 📱 Responsive Design
-
-The design is fully responsive:
-
-- **Mobile** (< 768px): Single column, sidebar hidden, hamburger menu
-- **Tablet** (768px - 1024px): Single column, sidebar hidden
-- **Desktop** (> 1024px): Three-column layout with sidebar
-
-## 🧩 Custom Hooks
-
-### useScroll
-
-```tsx
-import { useScroll } from "@/hooks/use-scroll";
-
-function MyComponent() {
-  const { scrollY, isScrolled } = useScroll();
-  
-  return <div>{isScrolled ? "Scrolled" : "At top"}</div>;
-}
-```
-
-### useMediaQuery
-
-```tsx
-import { useMediaQuery } from "@/hooks/use-media-query";
-
-function MyComponent() {
-  const isMobile = useMediaQuery("(max-width: 768px)");
-  
-  return <div>{isMobile ? "Mobile" : "Desktop"}</div>;
-}
-```
-
-## 📝 Available Scripts
-
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run start` - Start production server
-- `npm run lint` - Run ESLint
+Each application manages its own dependencies:
+- `web-customer/package.json` - Web customer dependencies
+- `web-admin/package.json` - Web admin dependencies
+- `mobile-customer/pubspec.yaml` - Mobile app dependencies
 
 ## 🚢 Deployment
 
-### Deploy on Vercel
+Each application can be deployed independently:
 
-The easiest way to deploy is using [Vercel](https://vercel.com):
-
-1. Push your code to GitHub
-2. Import your repository on Vercel
-3. Vercel will automatically detect Next.js and configure the build
-
-### Build Verification
-
-Always run `npm run build` before deploying to ensure there are no errors:
-
-```bash
-npm run build
-```
-
-## 🎯 Medium Design Principles
-
-This project follows Medium's design principles:
-
-1. **Minimalism** - Clean, uncluttered interface
-2. **Typography** - Serif fonts for reading, sans-serif for UI
-3. **Whitespace** - Generous spacing for readability
-4. **Color** - Black text on white background, minimal use of color
-5. **Responsive** - Mobile-first, works on all devices
-6. **Focus** - Content-first approach
-
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
+- **Web Customer**: Deploy to Vercel, Netlify, or any Node.js hosting
+- **Web Admin**: Deploy to Vercel, Netlify, or any Node.js hosting
+- **Mobile Customer**: Build and publish to App Store (iOS) and Google Play Store (Android)
 
 ## 📄 License
 
 This project is open source and available under the [MIT License](LICENSE).
-
-## 🙏 Acknowledgments
-
-- [Medium](https://medium.com) for design inspiration
-- [Next.js](https://nextjs.org) for the amazing framework
-- [Tailwind CSS](https://tailwindcss.com) for the utility-first CSS framework
-- [Lucide](https://lucide.dev) for beautiful icons
-
-## 📚 Learn More
-
-- [Next.js Documentation](https://nextjs.org/docs)
-- [Tailwind CSS Documentation](https://tailwindcss.com/docs)
-- [TypeScript Documentation](https://www.typescriptlang.org/docs/)
-
----
-
-Built with ❤️ using Next.js and TypeScript
